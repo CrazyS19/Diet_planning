@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DietRyt</title>
+    <link rel="shortcut icon" href="logo.JPG" type="image/x-icon">
+
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="admin.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+</head>
+<body onload="showcustomer_review()">
+    <div class="nav">
+        <nav class="sidebar">
+            <div class="logo_main">
+                <img src="logo.JPG" height="40px" width="40px"/>
+                <p>DietRyt</p>
+            </div>
+            <div class="button">
+                <button name="btn1" id="planner"> <a href="planner.html"> Log out</a></button>
+            </div>
+        </nav> 
+    </div>
+    <div class="main">
+        <div class="header">
+            <div class="profile">
+                <section>
+                    <div class="image" id="profileimg"></div> 
+                </section>
+                <section><div class="up">
+                    <h1>Welcome Back</h1>
+                </div>
+                <hr>
+                <div class="down">
+                    <h2>Shifaunnisa</h2>
+                </div></section>
+            </div> 
+            <div class="stats">
+                <div class="chart1" style="--color1:#d17baf; --color2:#5a0c36; ">
+                    <button id='b1' onclick="showdiet()"><h1>Diet <br>Data</h1></button>
+                </div>
+    
+                <div class="chart2" id="usercount" style="--color1:#f67d93; --color2:#a91a39;" >
+                    <button id='b2' onclick="showusercount()"><h1>User<br>Count</h1></button>
+                    
+                </div>
+                <div class="chart3"  style="--color1:#f0997c; --color2:#c63100;" > 
+                    <button id='b3' onclick="showcustomer_review()"><h1>Customer reviews</h1></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="show">
+            <div class="graph_show1" id="graph_show1" >
+            </div>
+            <div class="graph_show2" id="graph_show2">
+                
+            </div>
+            <div class="graph_show3" id="graph_show3">
+                
+            </div>
+        </div>
+    <div class="users">
+        <div class="messages">
+            <h1>Updates</h1><hr>
+            <ul>
+                <li><img src="profile_pics/capsicum.jpg"><h5>username1</h5></li>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                    <input placeholder="Reply"> 
+                    <button><img src="send.png" height="20px" width="20px"></button>
+                <hr id="hr">
+                </p>
+                <li><img src="profile_pics/corn.jpg"><h5>username1</h5></li>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                    <input placeholder="Reply"> 
+                    <button><img src="send.png" height="20px" width="20px"></button>
+                </p>
+            </ul>
+        </div>
+        <div class="line"></div>
+        <div class="list">
+        <h1>Users</h1><hr>
+           <ul>
+                <li><img src="profile_pics/avocado.jpg"> <h5>username1</h5> <h5>2-3-24</h5></li>
+                <li><img src="profile_pics/apple.jpg" > <h5>username2</h5> <h5>5-3-24</h5></li>
+                <li><img src="profile_pics/turnip.jpg" > <h5>username3</h5> <h5>6-3-24</h5></li>
+                <!--<li><img src="profile_pics/avocado.jpg"> <h5>username1</h5> <h5>2-2-24</h5></li>
+                <li><img src="profile_pics/apple.jpg" > <h5>username1</h5> <h5>2-2-24</h5></li>
+                <li><img src="profile_pics/turnip.jpg" > <h5>username1</h5> <h5>2-2-24</h5></li>-->
+            </ul>
+
+            <button>Show more</button>
+        </div >
+       
+        
+        
+    </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

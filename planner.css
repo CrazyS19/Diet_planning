@@ -1,0 +1,388 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.header{
+    margin: 55px 0 0 0;
+    background: linear-gradient(rgb(255, 255, 255,0.2),rgb(255, 255, 255,0.2)), url("planner_bg.jpg");
+    background-size:cover;
+    background-position: bottom right;
+    height: 450px;
+    width: 100%;
+}
+
+.header h1{
+    width: 35%;
+    font-size: 75px;
+    color: #360b22;
+    margin: 200px 0 0px 200px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+h2{
+    font-size: 45px;
+    margin: 80px 0 50px 0;
+    font-weight: 900;
+    font-family: 'Dancing script';
+    color: #cf3d0b;
+}
+
+.plans{
+    width: 99.9%;
+    height: 450px;
+    display: flex;
+    margin: 10px 0 0px 0px;
+}
+
+.radio-container{
+    width: 30%;
+    padding: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.radio-tile-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    width: 50%;
+    margin-left: 50px;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+    height: 170px;
+    border-radius: 10px;
+    width: 160px;
+    background-color:#cf3d0b;
+}
+
+.input-container input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+}
+
+.input-container img{
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    position: relative;
+    margin: 30px 0 0 38px;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.input-container label{
+    color:white;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: cursive;
+    margin: 20px 0 0 var(--margin);
+}
+
+input:checked  ~ .radio-tile{
+    opacity: 0.9;
+    box-shadow: 0 0 10px #cf3d0b;
+    border-radius: 10px;
+}
+
+input:checked + .radio-tile img,
+input:checked + .radio-tile label{
+    color: #360b22;
+    font-weight: bold;
+}
+
+.form{
+    width: 50%;
+    position: relative;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.meal-preferences {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    border: none;
+    height: 100%;  
+}
+
+.meal-preferences h3 {
+    margin-bottom: 9px;
+    font-size: 32px;
+    font-family: 'Dancing Script',cursive;
+    font-weight: 900;
+    color: #cf3d0b;
+}
+
+.meal-preferences input[type="number"] {
+    width: 150px;
+    height: 25px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#b1,#b2{
+    border: none;
+    height: 41px;
+    width: 150px;
+    background-color: #cf3d0b;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.meal-preferences button:hover {
+opacity: 0.8;
+}
+
+#Div2{
+    visibility: hidden;
+}
+
+.meal-item {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+.meal-item h3{
+font-family: cursive;
+font-size: 27px;
+margin-bottom: 15px;
+}
+
+.meal-item .items{
+    display: flex;
+    align-items: flex-start;
+    justify-content:space-between;
+    border: 1px solid black;
+    width: 100%;
+    height: 100px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.meal-item img{
+    height: 85px;
+    width: 85px;
+    margin: 7px ;
+    border-radius: 10px;
+}
+
+.meal-item .meal-name{
+    font-size: 21px;
+    font-family: 'Dancing script' ,cursive;
+    font-weight: bolder;
+    padding-top: 40px;
+    color: #cf3d0b;
+}
+
+.info-box {
+    margin-top: 10px;
+    margin-right: 20px;
+    font-family: cursive;
+    font-size: 14px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+} 
+
+.info-box section{
+    padding:10px
+}
+
+.text{
+    margin: 0 100px 60px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+}
+.text p{
+    font-size: 19px;
+    font-family: cursive;
+    text-indent: 50px;
+}
+
+.text button{
+    border: none;
+    height: 61px;
+    width: 150px;
+    background-color: #cf3d0b;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 40px 0 0 50px;
+}
+
+.main2{
+    background-color: #fdfdfd;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator{
+    display: flex;
+    align-items: center;
+    height: 650px;
+    width: 40%;
+}
+
+#BMI{
+    visibility: visible;
+}
+#BMR{
+    position: absolute;
+    top: 0PX;
+}
+.calci-container {
+    visibility: hidden;
+    position: relative;
+}
+
+.bmi-calci,
+.bmr-calci {
+    height: 680px;
+    width: 100%; 
+    box-sizing: border-box;
+    margin: 30px;
+    padding: 20px 30px 40px 30px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    font-size: 21px;
+    font-family: 'dancing script';
+    display: flex;
+    flex-direction: column;
+}
+
+.bmi-calci h3,
+.bmr-calci h3{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #360b22;
+    margin-left: 40px;
+    margin-bottom: 50px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: 110px;
+}
+
+.gender-options label, .gender-options input[type="radio"] {
+    display: inline;
+    margin-right: 10px; 
+    margin-left: 10px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.bmi-calci input[type="number"], select {
+    border: 1px solid #381616;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 5px;
+    width: 100%;  
+}
+
+.bmr-calci input[type="number"], select {
+    border: 1px solid #381616;
+    border-radius: 4px;
+    padding: 5px; 
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.calci-container button {
+    border: none;
+    height: 41px;
+    width: 150px;
+    background-color: #cf3d0b;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 40px 0 20px 90px;
+}
+
+.btn{
+    display: flex;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.calci-container p{
+    font-family: cursive;
+    font-size: 19px;
+    font-weight: 1000;
+    color: #381616;
+    margin-top: 20px;
+}
+
+.info2{
+    width: 85%;
+    margin-bottom: 100px;
+}
+.info2 h2{
+    margin: 50px 0 40px 440px;
+}
+
+.text2 p{
+    font-size: 19px;
+    font-family: cursive;
+    text-indent: 50px;
+}

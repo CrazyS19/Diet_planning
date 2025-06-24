@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DietRyt</title>
+    <link rel="shortcut icon" href="logo.JPG" type="image/x-icon">
+
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="userProfile.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Nutritions', 'kcal'],
+          ['Calories',     11],
+          ['Carbs',      2],
+          ['Protiens',  2],
+          ['Fats', 2],
+          ['Fibres',    7] //get dynamic average data from database
+        ]);
+
+        var options = {
+          title: 'Your average nutritions intake per day',
+          pieHole: 0.4,
+          colors: ['#cf3d0b', '#db2951', '#7f345c', '#541f3d', '#e07e5e']
+          
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart'));
+        chart.draw(data, options);
+      }
+    </script>
+
+</head>
+<body>
+    <div class="nav">
+        <nav class="sidebar">
+            <div class="logo_main">
+                <img src="logo.JPG" height="40px" width="40px"/>
+                <p>DietRyt</p>
+            </div>
+            <ul>
+                <li><p><a href="home.html" >HOME</a></p></li>
+                <li><p><a href="about.html" >ABOUT US</a></p></li>
+                <li><p><a href="planner.html" >PLANNER</a></p></li>
+                <li><p><a href="#" >BLOGS</a></p></li>
+                <li><p><a href="userProfile.html" >PROFILE</a></p></li>
+            </ul>
+            <div class="button">
+                <button name="btn1" id="planner"> <a href="planner.html"> Diet Plans</a></button>
+            </div>
+        </nav> 
+    </div>
+    <div class="main">
+        <div class="header">
+            <div class="profile">
+                <div class="border"><div class="image" id="profileimg"></div></div> 
+
+                <button id="b1" onclick="changeProfile()"><img src="pencil.png" height="15px"></button>    
+
+                <section><h2 id="uname1">Username1</h2></section>
+
+                <h3 id="email1">user1@gmail.com</h3>
+
+                <section class="Follow"><h3>10 followers</h3><h3>20 following</h3></section> 
+                
+                <!--get these details from database-->
+
+            </div>
+            <div class="editmain" >                
+                <div class="edit" id="edit">   
+                    <button id="b2" onclick="closeedit()"><img src="close.png" height="10px"></button>            
+                    <button id="b3" onclick="changedp()"><h2>Change profile image</h2></button><hr>
+                    <button id="b4" onclick="changeuname()"><h2>Change username</h2></button><hr>
+                    <button id="b5" onclick="changeemail()"><h2>Change email</h2></button><hr>
+                    <button id="b6" onclick="changepass()"><h2>Change password</h2></button>
+                </div>
+                
+                
+
+                <div class="uname" id="uname">   
+                    <button class="b7" onclick="goback()"><img src="back.png" alt="" height="20px"></button>              
+                    <form onsubmit="commitchange()">
+                            
+                        <h2>Enter new Username</h2><input type="text" id="newname" required><br>
+                        <button type="submit" onclick="closeedit()">Done</button>
+                        
+                    </form>                     
+                </div> 
+
+                <div class="email" id="email"> 
+                    <button class="b7" onclick="goback()"><img src="back.png" alt="" height="20px"></button> 
+                    <form onsubmit="commitchange1()">
+                        <h2>Enter new Email-Id</h2><input type="text" id="newemail" required><br>
+                        <button type="submit" onclick="closeedit()">Done</button>
+                    </form>         
+                </div>  
+
+                <div class="password" id="password">   
+                    <button class="b7" onclick="goback()"><img src="back.png" alt="" height="20px"></button>              
+                    <form onsubmit="checkpass()">
+                        <h2>Enter your old password</h2><input type="password" id="oldpass" required><br>
+                        <h2>Enter new password</h2><input type="password" id="newpass" required><br>  
+                        <h2>Confirm password</h2><input type="password" id="confirmpass" required><br>
+                        <button type="submit">Proceed</button>                       
+                    </form>                     
+                </div>  
+            </div><!--commit these changes in database-->
+        </div>  
+
+        <div class="dp" id="dp">   
+            <button class="b7" onclick="goback()"><img src="back.png" alt="" height="20px"></button>              
+                <div class="grid-container">    
+                    <button id="dp1" onclick="dp1()"><img src="profile_pics/apple.jpg"></button>
+                    <button id="dp2" onclick="dp2()"><img src="profile_pics/watermelon.jpg"></button>
+                    <button id="dp3" onclick="dp3()"><img src="profile_pics/raspberry.jpg"></button>
+                    <button id="dp4" onclick="dp4()"><img src="profile_pics/peach.jpg"></button>
+
+                    <button id="dp5" onclick="dp5()"><img src="profile_pics/turnip.jpg"></button>
+                    <button id="dp6" onclick="dp6()"><img src="profile_pics/grapes.jpg"></button>
+                    <button id="dp7" onclick="dp7()"><img src="profile_pics/banana.jpg"></button>
+                    <button id="dp8" onclick="dp8()"><img src="profile_pics/corn.jpg"></button>
+
+
+                    <button id="dp9" onclick="dp9()"><img src="profile_pics/coconut.jpg"></button>
+                    <button id="dp10" onclick="dp10()"><img src="profile_pics/avocado.jpg"></button>
+                    <button id="dp11" onclick="dp11()"><img src="profile_pics/potato.jpg"></button>
+                    <button id="dp12" onclick="dp12()"><img src="profile_pics/mushroom.jpg"></button>
+
+
+                    <button id="dp13" onclick="dp13()"><img src="profile_pics/kiwi.jpg"></button>
+                    <button id="dp14" onclick="dp14()"><img src="profile_pics/capsicum.jpg"></button>
+                    <button id="dp15" onclick="dp15()"><img src="profile_pics/cucumber.jpg"></button>
+                    <button id="dp16" onclick="dp16()"><img src="profile_pics/peas.jpg"></button>
+
+                </div>
+            <button id='done' onclick="closeedit()">Done</button>
+                
+            </form>                     
+        </div>
+
+        <section class="switch"><button onclick="showDiet()" id="b10"><h3>Diet History</h3></button>
+            <button onclick="showBlog()" id="b11"><h3>Your Blogs</h3></button>
+        </section>
+        <div class="container">
+            <div class="content" id="content">
+                <div class="diet">
+                    <div class="diet_show">
+                        <section class="items"><!--demo content--> <!--use this format to display data if possible-->
+                            <img src="meal1.png" alt="Meal image">
+                            <span class="meal-name">Meal Name</span>
+                            <div class="info-box">  
+                                <section><h4>Calories</h4><p>500</p></section>
+                                <section><h4>Carbs</h4> <p>30g</p></section>
+                                <section><h4>Fat</h4><p>10g</p></section>
+                                <section><h4>Protein</h4><p>20g</p></section>
+                            </div>
+                        </section>
+                        <section class="items"><!--demo content--> <!--use this format to display data if possible-->
+                            <img src="meal1.png" alt="Meal image">
+                            <span class="meal-name">Meal Name</span>
+                            <div class="info-box">  
+                                <section><h4>Calories</h4><p>500</p></section>
+                                <section><h4>Carbs</h4> <p>30g</p></section>
+                                <section><h4>Fat</h4><p>10g</p></section>
+                                <section><h4>Protein</h4><p>20g</p></section>
+                            </div>
+                        </section>
+                        <section class="items"><!--demo content--> <!--use this format to display data if possible-->
+                            <img src="meal1.png" alt="Meal image">
+                            <span class="meal-name">Meal Name</span>
+                            <div class="info-box">  
+                                <section><h4>Calories</h4><p>500</p></section>
+                                <section><h4>Carbs</h4> <p>30g</p></section>
+                                <section><h4>Fat</h4><p>10g</p></section>
+                                <section><h4>Protein</h4><p>20g</p></section>
+                            </div>
+                        </section>
+                        
+                        <br><br><button id="diet">Show More</button><br>
+                        **The following data is purely based on your recent searches. This may not be 100% accurate.
+                    </div>
+                </div>
+                    
+                <div class="chart" id="chart">chart</div>
+            </div>
+            
+            
+            <div class="history" id="history">
+                <div class="blog"><!----->
+                    <section><img src="vegandiet.png"><h2>My blog1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id pulvinar arcu, eu efficitur magna. Maecenas gravida eget mi sit amet accumsan. 
+                            Ut vulputate sem egestas neque laoreet lobortis. 
+                         </p>
+                    </section>
+                    <section><img src="dukandiet.png"><h2>My blog1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id pulvinar arcu, eu efficitur magna. Maecenas gravida eget mi sit amet accumsan. 
+                            Ut vulputate sem egestas neque laoreet lobortis. 
+                         </p>
+                    </section>
+                </div>
+                <div class="updates"><!--Show this if there is any update otherwise keep it blank-->
+                    <h2>Share your story now !!</h2>
+                    <button id="create"><a href="#">Create Blog</a></button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="userProfile.js"></script>
+</body>
+</html>
